@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: #f6f8ff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: #001f61;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    z-index: -1;
+}
+
+.wrap-first,
+.wrap-second {
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.wrap-first {
+    border: 4px solid #f6f8ff;
+}
+
+.wrap-second {
+    border: 4px solid #001f61;
+}
+
+.content-first h4,
+.content-second h4 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background: #f6f8ff;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.content-second h4 {
+    background: #001f61;
+    color: #fff;
+}
+
+.content-first p,
+.content-second p {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20px 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content-second p {
+    color: #001f61;
+}
+
+.content-first p {
+    color: #fff;
+}
+
+.icons {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.wrap-first .icons .fab {
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid rgba(241, 241, 232, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.wrap-second .icons .fab {
+    color: #001f61;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid rgba(8, 6, 46, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.wrap-first .icons .fab:hover,
+.wrap-second .icons .fab:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 1020px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+    }
+    body::before {
+        height: 50%;
+        width: 100%;
+        background: #001f61;
+        clip-path: none;
+    }
+    .wrap-first,
+    .wrap-second {
+        z-index: 100;
+        margin: 10px;
+    }
+}
+
